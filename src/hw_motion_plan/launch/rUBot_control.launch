@@ -1,0 +1,13 @@
+<launch>
+    <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+    <param name="port"              type="string"               value="/dev/ttyACM0"/>
+    <param name="baud"              type="int"                  value="57600"/>
+    </node>
+
+    <node name="rUBot_ctrl_node"        pkg="hw_motion_plan"      type="rUBot_navigation.py">
+    </node>
+
+    <node name="teleop_twist_keyboard"        pkg="teleop_twist_keyboard"      type="teleop_twist_keyboard.py">
+    </node>
+
+</launch>
